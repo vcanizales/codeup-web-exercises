@@ -24,6 +24,159 @@
             return Fahrenheit;
         }
 
+       let number = 21;
+       // if(number % 2 === 0) {
+        //    console.log("That number is even.");
+       // } else {
+         //   console.log("That number is odd.");
+        //}
+
+        // function isOdd(number) {
+        //     if (Math.abs(number) % 2 === 1) {
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+        // }
+
+        function isOdd(number){
+            return Math.abs(number) % 2 === 1;
+        }
+
+        // if (number % 3 === 0 && number % 3 === 0) {
+        //     console.log("That number is divisible by both 5 and 3.");
+        // } else {
+        //     console.log("That number is either not divisible by 3 or not divisible by 5.");
+        // }
+
+        // function divisibleByFiveAndThree(number) {
+        //     return number % 5 === 0 || number % 3 === 0;
+        // }
+
+        function divisibleBySevenOrThree(number) {
+            return number % 7 === 0 || number % 3 === 0;
+        }
+
+        function divisibleByThreeOrTwo(number) {
+            return number % 3 === 0 || number % 2 === 0;
+        }
+
+        function isOddAndDivisibleByThree(number) {
+            return number % 3 === 0 && number % 2 === 1;
+        }
+
+        function isOddOrDivisibleByThree(number) {
+            return number % 3 === 0 || number % 2 === 1;
+        }
+
+        //concatenation
+        // let myName = "Valeria";
+        // let myLastName = "Canizales";
+        // let myFullName = myName + " " + myLastName;
+        // console.log(myFullName);
+        //
+        // //using escape characters
+        // console.log("Shakespeare said: \"All the world's a stage\"");
+        //
+        // //back ticks are called constant literals
+        // console.log(`Shakespeare said "All the world's a stage"`);
+        //
+        // //$ are called template literals
+        // console.log(`${myName} ${myLastName}`);
+
+
+        //mini exercises strings - my code down here
+        // let myFirstName ="";
+        // let myMiddleName = "";
+        // let myLastName = "";
+        // function (fullName) {
+        //     let fullName = myFirstName + " " +  myMiddleName + " " + myLastName;
+        //     console.log(fullName);
+        // }
+
+        //prof code
+        function fullName(firstName, middleName, lastName) {
+            return `${firstName} ${middleName} ${lastName}`;
+        }
+
+        //my code below
+        // let houseNumber = "";
+        // let streetName = "";
+        // let city = "";
+        // let state = "";
+        // let zipCode = "";
+        // function(fullAddress) {
+        //     let fullAddress = houseNumber + " " + streetName + " " + city + " " + state + " " + zipCode;
+        //     console.log(fullAddress);
+        // }
+
+        //prof code
+        function address(houseNumber, streetName, city, state, zipCode){
+            return `${houseNumber} ${streetName} "\n" ${city}, ${state} ${zipCode}`;
+        }
+
+        //bonus exercises
+        function tempConversion(temperature, isFahrenheit) {
+            if (isFahrenheit === true) {
+                return (temperature - 32) * 5/9;
+            } else {
+                return (temperature * 9/5) + 32;
+            }
+        }
+
+        function allCaps(sentence) {
+            console.log(sentence.toUpperCase());
+        }
+
+        function allLower(sentence) {
+            console.log(sentence.toLowerCase());
+        }
+
+        function cutItOut(sentence) {
+            console.log(sentence.trim());
+        }
+
+        function countIt(sentence) {
+            console.log(sentence.length);
+        }
+
+        function specific(text) {
+            console.log(text.substr(1, 3));
+        }
+
+        //correct one for above
+        function indexOfCharacter(char, string) {
+            return string.indexOf(char);
+        }
+
+        //bonus exercises
+        function replace(str1, str2, str3) {
+            console.log(str1.replace(str2, str3));
+        }
+
+        let numericString = "42";
+        let theAnswer = 42;
+
+        function dataType(value) {
+            return typeof value;
+        }
+
+        // let someValue = "vanilla" * 1000;
+        // if (dataType(someValue) === "number") {
+        //     console.log("That's a number");
+        // } else {
+        //     console.log("That's not a number")
+        // }
+
+        // function isNumber (value) {
+        //     return typeof value === "number";
+        // }
+
+        function isNumber(value) {
+            return !(isNaN(value) || typeof value === "boolean");
+        }
+
+
     </script>
 
 </body>
