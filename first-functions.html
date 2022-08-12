@@ -6,6 +6,9 @@
 </head>
 <body>
     <script>
+
+        //First functions
+
         function calculateKilometers(miles) {
             const convert = 1.609344;
             let Kilometers = miles * convert;
@@ -69,7 +72,7 @@
             return number % 3 === 0 || number % 2 === 1;
         }
 
-        //concatenation
+        //Concatenation
         // let myName = "Valeria";
         // let myLastName = "Canizales";
         // let myFullName = myName + " " + myLastName;
@@ -115,7 +118,7 @@
             return `${houseNumber} ${streetName} "\n" ${city}, ${state} ${zipCode}`;
         }
 
-        //bonus exercises
+        //Bonus exercises
         function tempConversion(temperature, isFahrenheit) {
             if (isFahrenheit === true) {
                 return (temperature - 32) * 5/9;
@@ -157,6 +160,8 @@
         let numericString = "42";
         let theAnswer = 42;
 
+
+        //typeOf Operator
         function dataType(value) {
             return typeof value;
         }
@@ -172,11 +177,29 @@
         //     return typeof value === "number";
         // }
 
+
+        //World of NaN
         function isNumber(value) {
             return !(isNaN(value) || typeof value === "boolean");
         }
 
+        //Write a function that takes two values. If the values can be converted to numbers, the function should return their products. Otherwise the function should return false.
+        function twoValues(x, y) {
+            if (isNaN(parseInt(x * y)) ){
+                return "false";
+            } else {
+                return "true";
+            }
+        }
 
+        //Javier's code
+        function multiply(value1, value2) {
+            if (isNaN(parseFloat(value1)) || isNaN(parseFloat(value2))) {
+                return false;
+            } else {
+                return parseFloat(value1) * parseFloat(value2);
+            }
+        }
     </script>
 
 </body>
