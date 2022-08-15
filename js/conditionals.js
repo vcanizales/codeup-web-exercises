@@ -2,6 +2,9 @@
 
 /* ########################################################################## */
 
+
+
+
 /**
  * TODO:
  * Create a function named `analyzeColor` that accepts a string that is a color
@@ -30,19 +33,68 @@
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
-function analyzeColor {
+// function analyzeColor(colors) {
+//     if(colors === 'red') {
+//         console.log("Fire trucks are red.")
+//     } else if (colors === 'orange') {
+//         console.log("Oranges are sweet.")
+//     } else if (colors === 'yellow') {
+//         console.log("Lemons are yellow.")
+//     } else if (colors === 'green') {
+//         console.log("The grass is green.")
+//     } else if (colors === 'blue') {
+//         console.log("The ocean is blue.")
+//     } else if (colors === 'indigo') {
+//         console.log("Indigo is darker than blue.")
+//     } else if (colors === 'violet') {
+//         console.log("Violet is a character in Willy Wonka.")
+//     } else {
+//         console.log("I don't know anything about " + colors + ".")
+//     }
+// }
 
-}
+
 /**
  * TODO:
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
 
+   // console.log(analyzeColor(randomColor));
+
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
+
+// var analyzeColor = prompt("What is your favorite color?")
+//
+// switch(analyzeColor) {
+//     case "red":
+//         alert("Fire trucks are red.");
+//         break;
+//     case "orange":
+//         alert("Oranges are sweet.");
+//         break;
+//     case "yellow":
+//         alert("Lemons are yellow.");
+//         break;
+//     case "green":
+//         alert("The grass is green.");
+//         break;
+//     case "blue":
+//         alert("The ocean is blue.");
+//         break;
+//     case "indigo":
+//         alert("Indigo is darker than blue.");
+//         break;
+//     case "violet":
+//         alert("Violet is a character in Willy Wonka.");
+//         break;
+//     default:
+//         alert("I don't know anything about that color.")
+//         break;
+// }
 
 /**
  * TODO:
@@ -73,6 +125,48 @@ function analyzeColor {
  * return value.
  */
 
+function calculateTotal(luckyNumber, totalAmount) {
+    let discountedPrice;
+    if (luckyNumber === 0) {
+        return totalAmount * 1;
+    } else if (luckyNumber === 1) {
+        return discountedPrice = totalAmount * .90;
+    } else if (luckyNumber === 2) {
+        return discountedPrice = totalAmount * .75;
+    } else if (luckyNumber === 3) {
+        return discountedPrice = totalAmount * .65;
+    } else if (luckyNumber === 4) {
+        return discountedPrice = totalAmount * .50;
+    } else if (luckyNumber === 5) {
+        return discountedPrice = totalAmount * 0;
+    } else {
+        return "You are not welcomed at this store."
+    }
+}
+    // let discountedPrice0 = 1 * totalAmount;
+    // let discountedPrice1 = .10 * totalAmount;
+    // let discountedPrice2 = .25 * totalAmount;
+    // let discountedPrice3 = .35 * totalAmount;
+    // let discountedPrice4 = .5 * totalAmount;
+    // let discountedPrice5 = 0 * totalAmount;
+    //
+    //
+    // switch (calculateTotal) {
+    //     case "0":
+    //         alert("Sorry, you do not get a discount.");
+    //         break;
+    //     case "1":
+    //         discountedPrice = discountedPrice1;
+    //         break;
+    //     case "2":
+    //         discountedPrice = discountedPrice2;
+    //         break;
+    //     default:
+    //         alert("You are not welcomed at this store.")
+    //         break;
+
+
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -81,8 +175,16 @@ function analyzeColor {
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
+// //Generate a random number between 0 and 6
 // var luckyNumber = Math.floor(Math.random() * 6);
+//
+// let totalBill = prompt("What was your total bill?");
+// let discountedPrice = calculateTotal(luckyNumber, totalBill);
+//
+// alert("Your lucky number was " + luckyNumber);
+// alert("Your price before the discount was " + totalBill);
+// alert("Your price after the discount is " + discountedPrice);
+
 
 /**
  * TODO:
@@ -102,3 +204,67 @@ function analyzeColor {
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+confirm("Would you like to enter a number?");
+let number = (prompt("Enter a number: "));
+
+if (isNaN(number)) {
+    alert ("That is not a number");
+} else {
+    if (number % 2 === 0) {
+        alert("That number is even.");
+    } else {
+        alert("That number is odd.");
+    }
+
+    let aHundred = alert("Your number plus 100 is " + (parseInt(number) + 100));
+
+    if (number >= 0) {
+        alert("Your number is positive.");
+    } else {
+        alert("You number is negative.");
+    }
+}
+
+
+
+
+
+
+//
+// if (number % 2 === 1) {
+//     alert("That number is odd.")
+// } else if (number / 2 === 0) {
+//     alert("That number is even.")
+// } else if (number > 0) {
+//     alert("Your number is positive.")
+// } else if (number < 0) {
+//     alert("You number is negative")
+// } else (number = isNaN || typeof number === "boolean"); {
+//     alert("That is not a number.")
+// }
+// alert (parseInt(number) + 100);
+
+
+
+
+// if (number = isNaN || typeof number === "boolean") {
+//     alert("That is not a number.")
+// } else if (number % 2 === 1) {
+//     alert("That number is odd.");
+// } else if (number / 2 === 0) {
+//     alert("That number is even.");
+// }
+
+//     alert (parseInt(number) + 100);
+// } else if(number > 0) {
+//     alert("Your number is positive.")
+// } else {
+//     alert("you number is negative.")
+// }
+
+
+
+
+
+
