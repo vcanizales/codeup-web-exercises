@@ -103,6 +103,10 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * function to show it to the user.
  */
 
+let color = prompt("Enter a color: ");
+color = color.toLowerCase();
+if (color === "blue")
+
 /* ########################################################################## */
 
 /**
@@ -184,7 +188,9 @@ function calculateTotal(luckyNumber, totalAmount) {
 // alert("Your lucky number was " + luckyNumber);
 // alert("Your price before the discount was " + totalBill);
 // alert("Your price after the discount is " + discountedPrice);
-
+//
+// OR
+// alert("Your lucky number was " + luckyNumber + "\n" + Your price before the //discount was " + "\n" + Your price after the discount is " + discountedPrice"
 
 /**
  * TODO:
@@ -227,10 +233,33 @@ if (isNaN(number)) {
 }
 
 
+//PROF code
+//
+// function isNumber(value) {
+//             return !(isNaN(value) || typeof value === "boolean");
+//         }
+// let wantsToEnterNumber = confirm("Do you want to enter a number?");
+// if(wantsToEnterNumber) {
+//
+//     let userNumber = parseFloat(prompt("Enter a number"));
+//
+//      if(userNumber % 2 === 0) {
+//          alert(userNumber + "is even");
+//      } else {
+//          alert(userNumber + " is odd");
+// }    alert(userNumber + " plus 100 equals " + userNumber + 100);
+//      if(userNumber < 0) {
+//          alert("That is a negative number.");
+//      } else {
+//          alert("That is a positive number.")
+//          }
+//      } else {
+//      alert("Incorrect input data type");
+//  }
+//}
 
 
-
-
+// MY TRIES
 //
 // if (number % 2 === 1) {
 //     alert("That number is odd.")
@@ -245,9 +274,7 @@ if (isNaN(number)) {
 // }
 // alert (parseInt(number) + 100);
 
-
-
-
+//MORE OF MY TRIES
 // if (number = isNaN || typeof number === "boolean") {
 //     alert("That is not a number.")
 // } else if (number % 2 === 1) {
@@ -262,6 +289,51 @@ if (isNaN(number)) {
 // } else {
 //     alert("you number is negative.")
 // }
+//END OF MY TRIES
+//
+//
+//function oddOrEven(number {
+//  return number % 2 === 0 ? number + " is even." : number + "is odd.";
+// }
+
+// ANOTHER FUNCTION
+// function negativeOrPostive(number) {
+//      return number < 0 ? number + " is a negative number" : number + " is a
+//      positive number."
+//}
+// function getNumber() {
+//  if (confirm("Do you want to enter a number?")) {
+//      return parseFloat(prompt("Enter a number:"));
+//  }
+// }
+//
+//function analyzeNumber(number) {
+//  if (number === undefined) {
+//      return false;
+//  }
+//  if (isNumber(number)){
+//     alert(oddOrEven(userNumber));
+//     alert(numberPlus100(userNumber));
+//      alert(negativeOrPositive(number));
+//  } else {
+//      alert("Incorrect input data type");
+// }
+//}
+// analyzeNumber(getNumber());
+
+
+//function numberPlus100(number) {
+//  return number.toString() + " plus 100 equals " + (number + 100);
+// }
+// let wantsToEnterNumber = confirm("Do you want to enter a number?");
+//if (wantsToEnterNumber) {
+//  let userNumber = parseFloat(prompt("Enter a number"));
+//  if (isNumber(userNumber)){
+//      alert(oddOrEven(userNumber));
+//      alert(numberPlus100(userNumber));
+//      if (userNumber < 0) {
+//          alert("That is a negative number");
+//          } else {
 
 
 
