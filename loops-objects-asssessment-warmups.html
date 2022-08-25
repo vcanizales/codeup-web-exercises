@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Warm Up</title>
+</head>
+<body>
+<script>
+
+let numbers = [1,2,3,4,5];
+let sum = 0;
+// for (let i= 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+// }
+// console.log(sum/numbers.length);
+let sumOfNumbers = numbers.reduce((previousValue, currentValue) => previousValue + currentValue, sum);
+console.log(sumOfNumbers/numbers.length);
+
+
+let array = ['cup', 'desk', 'pen','backpack', 'laptop'];
+    function getLongestString(strArray) {
+    let longestString= " ";
+        for (let i = 0; i < strArray.length; i++) {
+            if (strArray[i].length > longestString.length) {
+                longestString = strArray[i];
+            } else if (strArray[i].length == strArray[i].length) {
+                strArray[i] < strArray[i];
+            } else {
+        }
+    }
+    return longestString;
+};
+
+console.log(getLongestString(array));
+
+</script>
+</body>
+</html>

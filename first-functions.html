@@ -180,7 +180,7 @@
 
         //World of NaN
         function isNumber(value) {
-            return !(isNaN(value) || typeof value === "boolean");
+            return !(isNaN(value) || typeof value === "boolean" || value === null);
         }
 
         //Write a function that takes two values. If the values can be converted to numbers, the function should return their products. Otherwise the function should return false.
