@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    <style>
+        body {
+          background-color: dimgray;
+          color: white;
+        }
+        hr {
+            color: black;
+        }
+        a {
+            color: darkblue;
+        }
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+<!--GET vs POST....methods as to how the data will get transmitted over a network-->
+<!--GET aimed at getting some information from somewhere-->
+<!--POST is aimed at providing information that will get absorbed within the database and trigger some action-->
+  <form method="GET" action="https://request-inspector.glitch.me">
+<!--this is a void element because it has no closing tag-->
+<!--ID attribute creates a label element-->
+      <fieldset>
+          <legend><h3>Customer Information</h3></legend>
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username"><br>
+      <label for="password">Password: </label>
+      <input type="password" name="password" id="password"><br>
+      <br>
+      <input type="submit">
+<!--  </form>-->
+<!--Street Addresses with txt box-->
+<hr>
+<form method="GET" action="https://request-inspector.glitch.me">
+    <label for="streetAddress">Street Address: </label>
+    <input type="text"name="streetAddress" id="streetAddress"><br>
+    <br>
+    <label for="city">City: </label>
+    <input type="city" name="city" id="city"><br></fieldset>
+    <br>
+    <input type="submit" value="Submit">
+<!--</form>-->
+<!--Marvel or DS with radio buttons-->
+<form method="post" action="https://request-inspector.glitch.me">
+    <h3>Marvel or DC?</h3>
+    <label for="marvel">Marvel: </label>
+    <input type="radio" name="marvelOrDc" value="Marvel" id="marvel"><br>
+    <label for="dc">DC</label>
+    <input type="radio" name="marvelOrDc" value="DC" id="dc"><br>
+    <br>
+    <input type="submit" value="Submit"><br>
+<!--</form>-->
+<form method="post" action="https://request-inspector.glitch.me">
+
+<!--Toppings Options with checkmarks-->
+    <h4>Choose your extras:</h4>
+    <input type="checkbox" name="extras" value="Provolone" id="provolone"><label for="provolone">Provolone</label><br>
+    <input type="checkbox" name="extras" value="Cheddar" id="cheddar"><label for="cheddar">Cheddar</label><br>
+    <input type="checkbox" name="extras" value="American Cheese" id="american"><label for="american">American Cheese</label><br>
+    <input type="checkbox" name="extras" value="Swiss" id="swiss"><label for="swiss">Swiss Cheese</label><br>
+    <input type="checkbox" name="extras" value="Pepper Jack" id="pepperJack"><label for="pepperJack">Pepper Jack</label><br>
+    <input type="checkbox" name="extras" value="Jalapenos" id="jalapenos"><label for="jalapenos">Sliced Jalapenos</label><br>
+    <input type="checkbox" name="extras" value="Mushrooms" id="mushrooms"><label for="mushrooms">Sauteed Mushrooms</label><br>
+    <input type="checkbox" name="extras" value="Onions" id="onions"><label for="onions">Grilled Onions</label><br>
+    <input type="checkbox" name="extras" value="Bacon" id="bacon"><label for="bacon">Extra Bacon</label><br>
+    <input type="checkbox" name="extras" value="Guacamole" id="guacamole"><label for="guacamole">Guacamole</label><br>
+    <br>
+    <input type="submit" value="Submit"><br>
+
+    <h4><label for="destination">Choose your destination:</label></h4>
+    <select name="destination" id="destination">
+        <option value="Hawaii">Hawaii</option>
+        <option value="Yucatan">Yucatan</option>
+        <option value="Greece">Greece</option>
+        <option value="Florida">Florida</option>
+        <option value="California">California</option>
+    </select>
+    <br>
+    <h4><label for="comments">Please leave your comments: </label></h4>
+    <br>
+    <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+    <br>
+<!--Grab-bag-->
+    <input type="date" name="date" id="date">
+    <input type="hidden" name="usernameID" value="12345">
+<!--Reset and Submit-->
+    <input type="reset"><br>
+    <br>
+    <input type="submit" value="Submit"><br>
+        <br>
+        <a href="https://request-inspector.glitch.me?username=jojo&streetAddress=678+Lala+St&city=San+Antonio&admin=true">Send Request</a>
+
+
+</form>
+</body>
+</html>
