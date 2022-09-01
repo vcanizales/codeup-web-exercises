@@ -2,3 +2,44 @@
     color: purple;
     text-decoration: underline;
 }
+
+body {
+    height: 150vh;
+    background-image: url(img/blue-gradient-background.jpeg);
+    font-family: Helvetica;
+}
+
+ul {
+    list-style: square;
+}
+table {
+    font-family: "Arial Narrow";
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 2px indianred;
+    padding: 10px;
+    background-color: beige;
+}
+
+img1 {
+    text-align: right;
+}
+img2 {
+    text-align: right;
+}
+
+a {
+    transition: background-color 3s ease;
+
+}
+a:hover,
+a:focus {
+    background-color: #fff;
+    color: #333;
+}
+a {
+    transition: background-color 3s ease;
+
+}

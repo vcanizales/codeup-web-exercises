@@ -8,6 +8,7 @@ body, html {
     width: 100%;
     background-color: #cbffcd;
     font-family: Arial, Ubuntu, sans-serif;
+    box-sizing: border-box;
 }
 
 form {
@@ -15,8 +16,8 @@ form {
     /*<input type="text" id="username" name="username" class="form-control"><br>*/
     /*<label for="password" class="form-label">Password</label><br>*/
     /*<input type="password" id="password" name="password" class="form-control"><br>*/
+    margin: 1em;
     padding: 1em;
-    border: 1em;
     /* This form should be separated from other elements by 1em */
     /* There must be 1em between the content and the border of this element */
 }
@@ -25,9 +26,9 @@ fieldset {
     -webkit-box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
-    padding: 20px;
-    border: 1em;
+    padding: 1em;
     background-color: white;
+    border: none;
     /*margin: 1em;*/
     /* There must be 1em between the content and the border of this element */
     /* It should have no border */
@@ -35,7 +36,7 @@ fieldset {
 }
 
 .width-80 {
-    max-width: 80%;
+    width: 80%;
     margin: 0 auto;
     /* The element with this class should be 80% of the width and it must be centered */
     /* Read how to center elements with margin here: http://learnlayout.com/margin-auto.html*/
@@ -43,10 +44,9 @@ fieldset {
 
 .form-group {
     width: 100%;
-    padding-bottom: .5px;
-    padding-top: 5px;
     /* This element must use 100% of the width */
     /* It should have a separation of .5em from elements on top of it and below it*/
+    margin: 0.5em 0;
 }
 
 .form-label {
@@ -59,11 +59,10 @@ fieldset {
 }
 
 .btn {
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding: 8px;
     font-weight: bold;
     color: white;
-    border-style: solid lightgrey 1px;
+    border: 1px solid black;
 
     /* There must be a separation of 8px between the text and the border of this element */
     /* The text color of this element should be white and bold */
@@ -72,11 +71,11 @@ fieldset {
 }
 
 .form-control {
-    padding:  4px;
-    margin: .5em;
+    padding: 4px 0;
+    margin: 0.5em;
     max-width: 580px;
     border-color: black;
-    width: calc(100% - 20px);
+    width: calc(100% - 10px);
     /* There must be 4px on top of the text and below the text of an input with this class */
     /* It should have a separation of .5em from elements on top of it and below it */
 
