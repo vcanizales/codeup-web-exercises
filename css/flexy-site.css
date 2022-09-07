@@ -1,0 +1,52 @@
+body {
+	background-color: lightblue;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+header, article, aside, footer, main {
+	padding: 0.5rem;
+	box-sizing: border-box;
+}
+
+header {
+	background-color: #0fb784 ;
+	color: #152c20;
+	text-align: center;
+}
+
+main {
+	display: flex;
+}
+
+article {
+	flex: 75%;
+}
+
+aside {
+	background-color: white;
+	flex: 25%;
+}
+
+nav {
+	display: flex;
+	background-color: black;
+	padding: 10px 0;
+}
+ nav a {
+	 flex: auto;
+	 background: #ccc;
+	 color: black;
+	 text-align: center;
+	 margin: 0 5px;
+	 text-decoration: none;
+ }
+
+ nav a:hover {
+	 outline: 1px solid red;
+	 color: red;
+	 text-decoration: underline;
+ }
+
+ nav a:nth-of-type(1), nav a:nth-of-type(2) a:last-of-type {
+	 flex-shrink: 2;
+ }

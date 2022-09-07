@@ -1,0 +1,46 @@
+nav {
+	display: flex;
+	background-color: lightslategrey;
+	font-family: 'Work Sans', sans-serif;
+	/*justify-content: space-between;*/
+
+}
+
+nav * {
+	box-sizing: border-box;
+	/*display: flex;*/
+}
+
+a {
+	color: black;
+	text-decoration: none;
+	display: inline-block;
+	padding: 0 3px;
+	font-weight: bold;
+}
+
+a:hover {
+	color: blue;
+}
+section:first-of-type {
+	margin: auto 0;
+}
+
+section:nth-of-type(2) {
+	font-family: Montserrat, sans-serif;
+	font-size: 3em;
+	padding: .2em;
+	margin: auto;
+}
+
+section:last-of-type {
+	display: flex;
+}
+
+section:last-of-type a {
+	align-self: center;
+	justify-content: flex-end;
+}
+span {
+	display: flex;
+}
