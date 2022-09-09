@@ -1,0 +1,23 @@
+html {
+	font-family: sans-serif;
+}
+
+#main-heading {
+	background-image: url("../img/pizza.png");
+	height: 346px;
+	background-size: cover;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+/*.card {*/
+/*	display: none;*/
+/*	touch-action: ;*/
+/*}*/
+
+
+
+

@@ -3,9 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom.css">
     <title>Order Pizza</title>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Pizza World</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Order Online</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Menu</a>
+                </li>
+            </ul>
+            <form class="d-flex me-auto" role="search">
+                <input class="form-control me-2 " type="search" placeholder="Zip Code" aria-label="Search">
+                <button class="btn btn-outline-primary text-nowrap" type="submit">Search stores near you!</button>
+            </form>
+            <form class="d-flex" role="sign-up">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+                <a href="#">Sign up!</a>
+            </form>
+        </div>
+    </div>
+</nav>
 
+
+    <div class="container-fluid my-4 bg-light rounded-3 py-5 px-0" id="main-heading">
+        <h1 class="text-center mt-5 bg-light bg-opacity-75">Welcome to Pizza World!</h1>
+
+    <div class="container-fluid" id="pizza options">
+        <h2 class="text-left">Build your own pizza!</h2>
+
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#"><span class="badge bg-secondary rounded-pill">1</span>
+                    Size and Crust</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><span class="badge bg-secondary rounded-pill" >2</span>
+                    Cheese and sauce</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><span class="badge bg-secondary rounded-pill" >3</span>
+                    Toppings</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card" style="width: 100%;">
+        <div class="card-header">
+            Hand Tossed
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+                <form action="order-pizza.html">
+                    <li class="list-group-item">
+                        <input type="radio">
+                        <label for="">Small (10")</label>
+                    </li>
+                    <li class="list-group-item">
+                    <input type="radio">
+                    <label for="">Medium (12")</label>
+                    </li>
+                </form>
+            <div class="card-header">
+                Crispy Thin
+            </div>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item">Thin enough for optimum crispy to crunch ratio.</li>
+            <form action="order-pizza.html">
+                <li class="list-group-item">
+                    <input type="radio">
+                    <label for="">Medium (12")</label>
+                </li>
+                <li class="list-group-item">
+                    <input type="radio">
+                    <label for="">Large (12")</label>
+                </li>
+            </form>
+        </ul>
+    </div>
 </body>
 </html>
