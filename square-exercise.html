@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Square Exercise</title>
+    <style>
+      .square {
+        width: 150px;
+        height: 150px;
+        border-radius: 0;
+        float: left;
+        margin-right: 50px;
+        background-color: #3B94D9;
+      }
+
+      div {
+	      width: 100px;
+	      height: 100px;
+	      background-color: red;
+	      position: relative;
+	      animation-name: example;
+	      animation-duration: 4s;
+	      animation-iteration-count: infinite;
+      }
+
+      @keyframes example {
+	      0%   {background-color:red; left:0px; top:0px;}
+	      25%  {background-color:yellow; left:200px; top:0px;}
+	      50%  {background-color:blue; left:200px; top:200px;}
+	      75%  {background-color:green; left:0px; top:200px;}
+	      100% {background-color:red; left:0px; top:0px;}
+      }
+    </style>
+</head>
+<body>
+
+  <div class="square" id="square"></div>
+
+  <script type="text/javascript">
+      // document.getElementById("square").onclick = function () {
+      //     document.getElementById("square").style.display = "I'm a square";
+      // }
+
+
+      document.querySelector(".square").addEventListener('click', function() {
+          alert("I'm a square!");
+          console.log(window.getComputedStyle(document.querySelector(".square"), null).getPropertyValue('background-color'));
+      })
+  </script>
+
+</body>
+</html>
