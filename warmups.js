@@ -1,11 +1,11 @@
-let numbers = [1,2,3,4,5];
-let numbers2 = [35,21,87,43,55];
-let sum = 0;
-// My first attempt
-for (let i= 0; i < numbers.length; i++) {
-    sum += numbers[i];
-}
-console.log(sum/numbers.length);
+// let numbers = [1,2,3,4,5];
+// let numbers2 = [35,21,87,43,55];
+// let sum = 0;
+// // My first attempt
+// for (let i= 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+// }
+// console.log(sum/numbers.length);
 
 // Javier presenting a for loop for warm-up
 //  for (let i= 0; i < numbers.length; i++) {
@@ -26,63 +26,63 @@ console.log(sum/numbers.length);
 // console.log(sumOfNumbers/numbers2.length);
 
 //another way
-function arrayAverage(numbers) {
-    numbers.forEach(number => {
-        if(!isNumber(number)){
-            return false;
-        }
-        total += number;
-    });
-    return total/numbers.length;
-}
-
-
-let array = ['cup', 'desk','lunchade','pen','backpack','laptop'];
-function getLongestString(strArray) {
-    let longestString= " ";
-    for (let i = 0; i < strArray.length; i++) {
-        if (strArray[i].length > longestString.length) {
-            longestString = strArray[i];
-        }
-    }
-    return longestString;
-};
-
-console.log(getLongestString(array));
-
-//Write a function, calculateTotalStudents, that returns the total number of students recorded in the classes array.
-let classes = [
-    {class: "6th grade history", students: 18},
-    {class: "7th grade history", students: 20},
-    {class: "8th grade history", students: 22}
-];
-
-// function calculateTotalStudents() {
-//     let sum = classes.reduce((accumulator, object, students) => {
-//         return accumulator + object.students;
-//     }, 0);
-//     console.log(sum);
+// function arrayAverage(numbers) {
+//     numbers.forEach(number => {
+//         if(!isNumber(number)){
+//             return false;
+//         }
+//         total += number;
+//     });
+//     return total/numbers.length;
 // }
-
-function calculateTotalStudents(array) {
-    let sum = 0;
-    for (let i = 0; i < array.length; i++) {
-        sum += array[i].students;
-        }
-    return sum;
-    }
-
-
-let numericArray = [8, 10, 20];
-function calculateTotal(array) {
-    let total=0;
-    for (let i=0; i < array.length; i++) {
-        total += array[i];
-    }
-    return total;
-}
-
-console.log(calculateTotal(numericArray));
+//
+//
+// let array = ['cup', 'desk','lunchade','pen','backpack','laptop'];
+// function getLongestString(strArray) {
+//     let longestString= " ";
+//     for (let i = 0; i < strArray.length; i++) {
+//         if (strArray[i].length > longestString.length) {
+//             longestString = strArray[i];
+//         }
+//     }
+//     return longestString;
+// };
+//
+// console.log(getLongestString(array));
+//
+// //Write a function, calculateTotalStudents, that returns the total number of students recorded in the classes array.
+// let classes = [
+//     {class: "6th grade history", students: 18},
+//     {class: "7th grade history", students: 20},
+//     {class: "8th grade history", students: 22}
+// ];
+//
+// // function calculateTotalStudents() {
+// //     let sum = classes.reduce((accumulator, object, students) => {
+// //         return accumulator + object.students;
+// //     }, 0);
+// //     console.log(sum);
+// // }
+//
+// function calculateTotalStudents(array) {
+//     let sum = 0;
+//     for (let i = 0; i < array.length; i++) {
+//         sum += array[i].students;
+//         }
+//     return sum;
+//     }
+//
+//
+// let numericArray = [8, 10, 20];
+// function calculateTotal(array) {
+//     let total=0;
+//     for (let i=0; i < array.length; i++) {
+//         total += array[i];
+//     }
+//     return total;
+// }
+//
+// console.log(calculateTotal(numericArray));
 
 // Write a function called convertToObject that takes in a string that is the name of a class, and a number that is the number of students, and returns an object with the properties `class` and `students`
 
@@ -104,69 +104,69 @@ console.log(calculateTotal(numericArray));
 //     }
 // }
 
-const convertToObject = (nameOfClass, numberOfStudents) => {
-    return {
-        class: nameOfClass,
-        numberOfStudents: numberOfStudents
-    }
-}
-
-//////////////////////////
-console.log(convertToObject("Intro to Programming", 20));;
-
-let myFunction = convertToObject;
-console.log(myFunction("Intro to React", 6));
-
-//////////////////////////
-
-const neighborhood1 ={
-    neighborhood: "Lovely Estates",
-    medianHomePrice: 280000,
-    pool: true,
-    tennis: false,
-    crimeRate: "low",
-    schools: [
-        {name: "ES1", rating: 8},
-        {name: "MS2", rating: 6},
-        {name: "HS3", rating: 8}
-    ]
-}
-
-const neighborhood2 ={
-    neighborhood: "Luminous Estates",
-    medianHomePrice: 270000,
-    pool: true,
-    tennis: false,
-    crimeRate: "low",
-    schools: [
-        {name: "ES1", rating: 8},
-        {name: "MS2", rating: 8},
-        {name: "HS3", rating: 8}
-    ]
-}
-
-const neighborhood3 ={
-    neighborhood: "Ginormous Ego Estates",
-    medianHomePrice: 350000,
-    pool: true,
-    tennis: true,
-    crimeRate: "low",
-    schools: [
-        {name: "ES1", rating: 9},
-        {name: "MS2", rating: 9},
-        {name: "HS3", rating: 9}
-    ]
-}
+// const convertToObject = (nameOfClass, numberOfStudents) => {
+//     return {
+//         class: nameOfClass,
+//         numberOfStudents: numberOfStudents
+//     }
+// }
+//
+// //////////////////////////
+// console.log(convertToObject("Intro to Programming", 20));;
+//
+// let myFunction = convertToObject;
+// console.log(myFunction("Intro to React", 6));
+//
+// //////////////////////////
+//
+// const neighborhood1 ={
+//     neighborhood: "Lovely Estates",
+//     medianHomePrice: 280000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "ES1", rating: 8},
+//         {name: "MS2", rating: 6},
+//         {name: "HS3", rating: 8}
+//     ]
+// }
+//
+// const neighborhood2 ={
+//     neighborhood: "Luminous Estates",
+//     medianHomePrice: 270000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "ES1", rating: 8},
+//         {name: "MS2", rating: 8},
+//         {name: "HS3", rating: 8}
+//     ]
+// }
+//
+// const neighborhood3 ={
+//     neighborhood: "Ginormous Ego Estates",
+//     medianHomePrice: 350000,
+//     pool: true,
+//     tennis: true,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "ES1", rating: 9},
+//         {name: "MS2", rating: 9},
+//         {name: "HS3", rating: 9}
+//     ]
+// }
 
 // Write a function that takes a neighborhood object and determines if it is desirable. A neighborhood is desirable if the median home price is less than 300000, crime rates are low, and the total rating of schools is at least 24.
 
-function desirableNeighborhood(neighborhoodsObject) {
-    let total = 0;
-    for (let i = 0; i < neighborhoodsObject.schools.length; i++) {
-        total += neighborhoodsObject.schools[i].rating;
-    }
-        return neighborhoodsObject.medianHomePrice < 300000 && neighborhoodsObject.crimeRate === "low" && total >= 24;
-}
+// function desirableNeighborhood(neighborhoodsObject) {
+//     let total = 0;
+//     for (let i = 0; i < neighborhoodsObject.schools.length; i++) {
+//         total += neighborhoodsObject.schools[i].rating;
+//     }
+//         return neighborhoodsObject.medianHomePrice < 300000 && neighborhoodsObject.crimeRate === "low" && total >= 24;
+// }
 
 //Let's pretend your company just hired your friend from college and paid you a referral bonus. Awesome! To celebrate, you're taking your team out to the terrible dive bar next door and using the referral bonus to buy, and build, the largest three-dimensional beer can pyramid you can. And then probably drink those beers, because let's pretend it's Friday too.
 //
@@ -187,15 +187,205 @@ function desirableNeighborhood(neighborhoodsObject) {
 //need a total cost accumulator variable and some kind of level variable that keeps track of the level we are on
 //need to keep looping until total cost > bonus
 
-function beeramid(bonus, price) {
-    let totalCost = 0;
-    let levels = 0;
-    while (totalCost < bonus) {
-        totalCost += levels * levels * price;
-        if(totalCost + ((levels + 1) ** 2 * price) > bonus) {
-            break;
-        }
-        levels++;
+// function beeramid(bonus, price) {
+//     let totalCost = 0;
+//     let levels = 0;
+//     while (totalCost < bonus) {
+//         totalCost += levels * levels * price;
+//         if(totalCost + ((levels + 1) ** 2 * price) > bonus) {
+//             break;
+//         }
+//         levels++;
+//     }
+//     return levels;
+// }
+//
+//
+//
+// const attendance = {
+//     miami: 32789,
+//     buffalo: 45678,
+//     portland: 24567,
+// }
+//
+//
+// // Given the attendance object, write a function that returns the total attendance across all teams.
+// // function totalAttendance(attendanceObject) {
+// //     return (miami + buffalo + portland);
+// // }
+//
+// // function totalAttendance(attendanceObject) {
+// //     let attendanceArray = Object.values(attendanceObject);
+// //     let total = 0;
+// //     for(let i=0; i < attendanceArray.length;i++) {
+// //         total += attendanceArray[i];
+// //     }
+// //     return total;
+// // }
+//
+// function totalAttendance(attendanceObject) {
+//     let total = 0;
+//     for (const prop in attendance) {
+//         total += attendance[prop];
+//     }
+//     return total;
+// }
+//
+//
+// // Given the attendance object, write a function that returns the average attendance
+// // function(avgAttendance) {
+// //     return (miami + buffalo + portland)/3;
+// // }
+//
+// function avgAttendance(attendanceObject) {
+//     let total = 0;
+//     for (const prop in attendance) {
+//         total += attendance[prop];
+//     }
+//     return total/Object.keys(attendance).length;
+// }
+//
+//
+// // Given the attendance object, write a function that returns an object with totalAttendance and averageAttendance properties set to the correct values
+//
+// function createObject(attendanceObject) {
+//     let total = 0;
+//     for (const prop in attendance) {
+//         total += attendance[prop];
+//     }
+//     return {
+//         totalAttendance: total,
+//         avgAttendance: total/Object.keys(attendance).length,
+//     }
+// }
+
+
+
+// Convert to Number
+//  * You prepare a list to send to the insurance company. As you finish, you notice you misformatted it.
+//  * Write a function named convertToNumber that takes in an object with at least one key/value pair, convert all the values to numbers.
+//  *
+//  * Examples
+//  *
+//  * convertToNumber({ piano: "200" }) ➞ { piano: 200 }
+//  * convertToNumber({ piano: "200", tv: "300" }) ➞ { piano: 200, tv: 300 }
+//  * convertToNumber({ piano: "200", tv: "300", stereo: "400" }) ➞ { piano: 200, tv: 300, stereo: 400 }
+//  */
+
+/**
+ * Convert Address to Object
+ * Write a function named convertAddressToObject that accepts a string that contains a street number (as a string) and street name separated by a space characters, and returns an object with properties streetNumber and streetName.
+ *
+ * Examples
+ *
+ * >> convertAddressToObject('8646 Sunny Oaks') ➞ {streetNumber: '8646', streetName: 'Sunny Oaks'}
+ * >> convertAddressToObject('5408 Villa Nueva') ➞ {streetNumber: '5408', streetName: 'Villa Nueva'}
+ **/
+
+let address = '8646 Sunny Oaks';
+function convertAddressToObject(addressString){
+    let addressArray = addressString.split(' ');
+    return {
+        streetNUmber: addressArray[0],
+        // streetNumber: address.substring(0,address.indexOf(' ')),
+        streetName: addressString.substring(address.indexOf(' ') + 1),
     }
-    return levels;
 }
+
+
+/**
+ * Count total pets
+ * Write a function named totalPets that accepts an array of objects where each object represents a person, and has a 'pets' property for their owned pets. The function should return the sum of every object's numPets property.
+ *
+ * Examples
+ *
+ * >> totalPets([
+ *       {name: 'Fernando Mendoza', pets: 1},
+ *       {name: 'Douglas Hirsh', pets: 8},
+ *       {name: 'Kenneth Howell', pets: 2}
+ *    ]) ➞ 11
+ */
+
+let peopleAndPets = [
+    {name: 'Fernando Mendoza', pets: 1},
+    {name: 'Douglas Hirsh', pets: 8},
+    {name: 'Kenneth Howell', pets: 2}
+]
+
+// function totalPets(petsArray){
+//     let total = 0;
+//     for(let i=0; i < petsArray.length; i++){
+//         total += petsArray[i].pets;
+//     }
+//     return total;
+// }
+
+function totalPets(arrayOfObjects){
+    return arrayOfObjects.reduce(function(acc, currentValue){
+        return acc + currentValue.pets;
+    }, 0)
+}
+//2nd Assessment will include: looping over arrays, looping over an array of objects with different values, get totals and averages, converting string to objects within arrays//
+/**
+ * Find the Smallest and Biggest Numbers
+ * Create a function named minMax that takes an array of numbers and return both the minimum and maximum numbers, in that order.
+ *
+ * Examples
+ * >> minMax([1, 2, 3, 4, 5]) ➞ [1, 5]
+ * >> minMax([2334454, 5]) ➞ [5, 2334454]
+ * >> minMax([1]) ➞ [1, 1]
+ *
+ * Notes
+ * All test arrays will have at least one element and are valid.
+ */
+
+
+/**
+ * Filter out Strings from an Array
+ * Create a function named filterArray that takes an array of non-negative integers and strings and return a new array without the strings.
+ *
+ * Examples
+ *
+ * >> filterArray([1, 2, "a", "b"]) ➞ [1, 2]
+ * >> filterArray([1, "a", "b", 0, 15]) ➞ [1, 0, 15]
+ * >> filterArray([1, 2, "aasf", "1", "123", 123]) ➞ [1, 2, 123]
+ *
+ * Notes
+ * Zero is a non-negative integer.
+ * The given array only has integers and strings.
+ * Numbers in the array should not repeat.
+ * The original order must be maintained.
+ */
+
+// **
+// * Drink Sorting
+// * You will be given an array of drinks, with each drink being an object with two properties: name and price.
+// * Create a function named sortDrinkByPrice that has the drinks array as an argument and return the drinks objects sorted by price in ascending order.
+// *
+// * Assume that the following array of drink objects needs to be sorted:
+//     * drinks = [
+//     *     {name: "lemonade", price: 50},
+// *     {name: "lime", price: 10}
+// * ]
+// *
+// * Examples
+// * >> sortDrinkByPrice(drinks) ➞ [{name: "lime", price: 10}, {name: "lemonade", price: 50}]
+// */
+
+//Refresher on objects
+let myDog = {};
+myDog.name = "Fido";
+
+let myKey = "name";
+console.log(myDog);
+console.log(myDog[myKey])
+
+myDog.myKey = "???";
+console.log(myDog);
+console.log(myDog.myKey);
+
+
+
+
+
+
