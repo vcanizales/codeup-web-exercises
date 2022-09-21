@@ -1,12 +1,9 @@
-$('li').css('font-size', '20px');
-$('h1, p, li').css({
-    'background-color': 'yellow'
+$('h1').click(function(){
+    $(this).css('background-color', '#1969B2')
 });
 
-const contents = $('#h1').html();
-    alert(contents);
 
-//Create a jQuery statement to alert the contents of your h1 element(s).
+    // Add jQuery code that will change the background color of an h1 element when clicked.
 
 
 
