@@ -1,6 +1,13 @@
-// $("h3").click(function(){
-//   $(this).next().slideToggle(500);
-// });
+// const contents = $('#main-heading').html();
+//     alert(contents);
+//
+// const items = $('#list').html();
+//     alert(items);
 
-alert("I am done loading");
+$(".codeup").css('border', '1px solid red');
+
+
+
+
+
 
