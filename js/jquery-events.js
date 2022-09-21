@@ -26,9 +26,11 @@ $(function (){
 
     $(document).keydown(function(e){
         console.log(e.originalEvent.key)
-    })
+    });
 
-    console.log(10%3);
+    console.log($("div").text());
+    console.log($("div").html());
+    $("div").text("I can set the content like this");
 
     document.get
 });
