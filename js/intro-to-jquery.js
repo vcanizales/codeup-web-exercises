@@ -1,11 +1,12 @@
-// const contents = $('#main-heading').html();
-//     alert(contents);
-//
-// const items = $('#list').html();
-//     alert(items);
+$('li').css('font-size', '20px');
+$('h1, p, li').css({
+    'background-color': 'yellow'
+});
 
-$(".codeup").css('border', '1px solid red');
+const contents = $('#h1').html();
+    alert(contents);
 
+//Create a jQuery statement to alert the contents of your h1 element(s).
 
 
 
