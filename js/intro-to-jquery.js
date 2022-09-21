@@ -6,7 +6,12 @@ $('p').dblclick(function(){
     $(this).css('font-size', '18px')
 });
 
-    // Add jQuery code that will change the background color of an h1 element when clicked.
+$('li').hover(function (){
+    $(this).css('color', 'red');
+},
+    function(){
+    $(this).css('color', 'black');
+});
 
 
 
