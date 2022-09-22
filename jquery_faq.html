@@ -3,52 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <title>jQuery FAQ</title>
+    <style>
+      .invisible {
+        visibility: hidden;
+      }
+    </style>
 </head>
 <body>
   <p>10 FAQs about National Parks</p>
+  <p><button id="answers">Click to view</button></p>
   <dl>
     <dt>Who is the director of the National Park Service?</dt>
-    <dd class="invisible" a href="#">Charles F. "Chuck" Sams III</dd>
+    <dd class="invisible">Charles F. "Chuck" Sams III</dd>
 
     <dt>What government agency oversees the National Park Service</dt>
-    <dd class="invisible" a href="#">Department of the Interior</dd>
+    <dd class="invisible">Department of the Interior</dd>
 
     <dt>How many employees are in the National Park Service?</dt>
-    <dd class="invisible" a href="#">Approximately 20,000</dd>
+    <dd class="invisible">Approximately 20,000</dd>
 
     <dt>How old is the National Park System?</dt>
-    <dd class="invisible" a href="#">106</dd>
+    <dd class="invisible">106</dd>
 
     <dt>How many areas are in the National Park System?</dt>
-    <dd class="invisible" a href="#">423</dd>
+    <dd class="invisible">423</dd>
 
     <dt>What is the largest national park site?</dt>
-    <dd class="invisible" a href="#">Wrangell-St. Elias National Park and Preserve</dd>
+    <dd class="invisible">Wrangell-St. Elias National Park and Preserve</dd>
 
     <dt>What is the smallest national park site?</dt>
-    <dd class="invisible" a href="#">Thaddeus Kosciuszko National Memorial</dd>
+    <dd class="invisible">Thaddeus Kosciuszko National Memorial</dd>
 
     <dt>How many people visit the national parks?</dt>
-    <dd class="invisible" a href="#">297,115,406</dd>
+    <dd class="invisible">297,115,406</dd>
 
     <dt>What is the National Park Service budget?</dt>
-    <dd class="invisible" a href="#">Approximately 20,000</dd>
+    <dd class="invisible">Approximately 20,000</dd>
 
     <dt>What is the most visited park site?</dt>
-    <dd class="invisible" a href="#">Blue Ridge Parkway</dd>
+    <dd class="invisible">Blue Ridge Parkway</dd>
   </dl>
+  <section>
+    <h3>Denali National Park</h3>
+    <p><button id="highlight">Click for yellow background</button></p>
+    <ul class="facts">
+      <li>DNP is home to the highest peak in North America, Denali. Called "The High One" in language of the Athabascan tribe, this towering peak stands at 20,320 feet above sea level.</li>
+      <li>The year of 1910 marked the first time that anyone had successfully summited Denali. It was a group of local residents who celebrated with hot chocolate and donuts.</li>
+      <li>Sable Pass inside DNP is known to be the best area to spot massive grizzly bears.</li>
+      <li>There are 169 different bird species, 39 mammal species, 14 fish species, and one species of amphibian known in Denali, whilst the park is also home to 1,500 species of vascular plants, lichens and mosses.</li>
+    </ul>
+    <h3>Yellowstone National Park</h3>
+    <ul class="facts">
+      <li>World's First National Park.</li>
+      <li>A designated World Heritage Site and designated Biosphere Reserve.</li>
+      <li>3,472 square miles or 8,987 square km.</li>
+      <li>96 % in Wyoming and 3 % in Montana.</li>
+    </ul>
+    <h3>Yosemite National Park</h3>
+    <ul>
+      <li>El Capitan is the largest granite monolith in the world. It rises more than 3,000 feet above the valley floor and is a favorite for experienced rock climbers.</li>
+      <li>Yosemite Falls: This is the tallest waterfall in North America. Snow runoff cascades down the 2,425 foot drop, with peak flow in May. In winter, an ice cone is often visible at the top of the falls.</li>
+      <li>Giant Sequoias and Mariposa Grove: Mariposa Grove contains about 500 mature giant sequoias. </li>
+      <li>There are 840 miles of trails to hike in Yosemite National Park</li>
+    </ul>
+  </section>
 
   <script src="js/jquery-3.6.1.min.js"></script>
   <script src="js/jquery.js"></script>
 
   <script>
-    $('.invisible').css('visibility', 'hidden');
 
-    $('.invisible').on('click', function(event){
-      event.preventDefault();
-      $(this).toggleClass().css('visibility', 'visible');
+    //from last exercise
+    //   $("button").on("click", function (){
+    //     $("dd").toggleClass('invisible');
+    // });
 
+    $("#highlight").on('click', function() {
+      $("ul").each(function () {
+        $(this).children().last().css('background-color', 'yellow');
+      });
     });
+
+      $("h3").on('click', function () {
+        $("ul").each(function () {
+          $(this).children().css("font-weight", "bold");
+        });
+    });
+
+      $("li").on('click', function(){
+        $(this).parent().children().first().css("color", "blue");
+    });
+
+    //When any list item is clicked, first li of the parent ul should have a font color of blue.
+
+
+
+
 
 
   </script>
