@@ -37,4 +37,8 @@ $(function(){
     }).on('click', function(){
         $(this).next().slideToggle();
     });
+
+    $("header p").hover(function(){
+        $(this).parent().toggleClass("darkMode");
+    });
 });

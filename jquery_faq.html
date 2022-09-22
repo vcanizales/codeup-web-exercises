@@ -8,34 +8,34 @@
   <p>10 FAQs about National Parks</p>
   <dl>
     <dt>Who is the director of the National Park Service?</dt>
-    <dd class="invisible">Charles F. "Chuck" Sams III</dd>
+    <dd class="invisible" a href="#">Charles F. "Chuck" Sams III</dd>
 
     <dt>What government agency oversees the National Park Service</dt>
-    <dd class="invisible">Department of the Interior</dd>
+    <dd class="invisible" a href="#">Department of the Interior</dd>
 
     <dt>How many employees are in the National Park Service?</dt>
-    <dd class="invisible">Approximately 20,000</dd>
+    <dd class="invisible" a href="#">Approximately 20,000</dd>
 
     <dt>How old is the National Park System?</dt>
-    <dd class="invisible">106</dd>
+    <dd class="invisible" a href="#">106</dd>
 
     <dt>How many areas are in the National Park System?</dt>
-    <dd class="invisible">423</dd>
+    <dd class="invisible" a href="#">423</dd>
 
     <dt>What is the largest national park site?</dt>
-    <dd class="invisible">Wrangell-St. Elias National Park and Preserve</dd>
+    <dd class="invisible" a href="#">Wrangell-St. Elias National Park and Preserve</dd>
 
     <dt>What is the smallest national park site?</dt>
-    <dd class="invisible">Thaddeus Kosciuszko National Memorial</dd>
+    <dd class="invisible" a href="#">Thaddeus Kosciuszko National Memorial</dd>
 
     <dt>How many people visit the national parks?</dt>
-    <dd class="invisible">297,115,406</dd>
+    <dd class="invisible" a href="#">297,115,406</dd>
 
     <dt>What is the National Park Service budget?</dt>
-    <dd class="invisible">Approximately 20,000</dd>
+    <dd class="invisible" a href="#">Approximately 20,000</dd>
 
     <dt>What is the most visited park site?</dt>
-    <dd class="invisible">Blue Ridge Parkway</dd>
+    <dd class="invisible" a href="#">Blue Ridge Parkway</dd>
   </dl>
 
   <script src="js/jquery-3.6.1.min.js"></script>
@@ -44,7 +44,8 @@
   <script>
     $('.invisible').css('visibility', 'hidden');
 
-    $('.invisible').on('click', function(){
+    $('.invisible').on('click', function(event){
+      event.preventDefault();
       $(this).toggleClass().css('visibility', 'visible');
 
     });
