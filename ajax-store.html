@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Online Store</title>
+    <!--CSS for styling-->
+    <style>
+        table, products {
+            margin: 0 auto;
+            font-size: medium;
+            border: 1px solid black;
+        }
+        h1 {
+            text-align: center;
+            color: #152c20;
+            font-size: large;
+        }
+        tr {
+            background-color: #3B94D9;
+            border: 1px solid black;
+        }
+        th,
+        td {
+            font-width: bold;
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+<button>Refresh</button>
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+
+<!--Your online tool store should load data from the JSON file using a get request and append the data to the table. You will need to use either $.ajax() or $.get(), and a .done() callback.-->
+<!--Add some new entries to inventory.json and see how the data on the page gets updated.-->
+<!--Add a "Refresh" button that will load inventory.json for you without having to refresh the entire page.-->
+<!--Add Twitter Bootstrap to your online store with some custom CSS to make the style your own.-->
+
+<script src="js/jquery-3.6.1.min.js"></script>
+<script>
+(function() {
+    "use strict";
+    // TODO: Create an AJAX GET request for the file under data/inventory.json
+
+    $.ajax("data/inventory.json").done(function(data) {
+        data.forEach(function (tool) {
+            console.log(tool);
+        $("#insertProducts").append(
+            `<tr class="insertProducts">
+                <td>${tool.title}</td>
+                <td>${tool.quantity}</td>
+                <td>${tool.price}</td>
+                <td>${tool.categories}</td>
+            </tr>`
+        )
+        });
+    });
+
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+
+
+
+
+})();
+</script>
+
+</body>
+</html>
