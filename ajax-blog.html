@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ajax Blog</title>
+</head>
+<style>
+    html {
+        background-image: linear-gradient(cornflowerblue, cornsilk, coral);
+        font-family: Helvetica;
+    }
+    h1 {
+       color: rebeccapurple;
+    }
+    p {
+        color: black;
+        font-weight: lighter;
+        font-family: cursive;;
+    }
+    h2 {
+        color: rebeccapurple;
+        font-family: cursive;
+    }
+    h3 {
+        color: midnightblue;
+        font-weight: bold;
+    }
+</style>
+<body>
+<div id = "posts">
+    <h1 class = "main-header"></h1>
+        <p id = "text"></p>
+        <br>
+        <h2 id = "type"></h2>
+        <h3 id = "time"></h3>
+    </h1>
+
+</div>
+
+<script src="js/jquery-3.6.1.min.js"></script>
+<script>
+    // $.ajax("data/blog.json").done(function(data) {
+    //     data.forEach(function(title) {
+    //         console.log(title);
+    //         $("#posts").append("<strong>(Main Header)</strong>")
+    //     });
+    // });
+
+    $(function(){
+        $.ajax("data/blog.json").done(function(data){
+            data.forEach(function(blog){
+                // let content = blog.content;
+                // let categories = blog.categories;
+                // let date = blog.date;
+                $("#posts").append(
+                    `<h1>${blog.title}</h1>
+                     <p>${blog.content}</p>
+                     <h2>${blog.categories}</h2>
+                     <h3>${blog.date}</h3>`
+                )
+            });
+        });
+    });
+
+
+</script>
+
+</body>
+</html>
+
