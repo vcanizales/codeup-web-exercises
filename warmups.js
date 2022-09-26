@@ -373,18 +373,175 @@ function totalPets(arrayOfObjects){
 // */
 
 //Refresher on objects
-let myDog = {};
-myDog.name = "Fido";
+// let myDog = {};
+// myDog.name = "Fido";
+//
+// let myKey = "name";
+// console.log(myDog);
+// console.log(myDog[myKey])
+//
+// myDog.myKey = "???";
+// console.log(myDog);
+// console.log(myDog.myKey);
 
-let myKey = "name";
-console.log(myDog);
-console.log(myDog[myKey])
+//2nd PreAssessment class Review
+function doubleNumber(number) {
+    return number * 2;
+}
 
-myDog.myKey = "???";
-console.log(myDog);
-console.log(myDog.myKey);
+function upperCase(string){
+    return string.toUpperCase();
+}
+
+function repeatString(string){
+    return string.concat(' ',string);
+}
+
+const myArray = [1, 2, 3, 4, 5, 6];
+
+//if you add return before array.shift, then it returns the item it removed
+function removeFirstElement(array){
+    array.shift();
+}
+function moveFirstToLast(array){
+    let firstElement = array.shift();
+    array.push(firstElement);
+    return array;
+}
 
 
+      const students = [
+         {
+             id: 1,
+             name: "Jacek",
+             notes: [5, 3, 4, 2, 5, 5]
+           },
+    {
+        id: 2,
+        name: "Ewa",
+        notes: [2, 3, 3, 3, 2, 5]
+    },
+    {
+        id: 3,
+             name: "Zygmunt",
+        notes: [2, 2, 4, 4, 3, 3]
+    }
+    ]
+
+    function getStudentTopNotes(arrayOfStudentObjects){
+        const topNotes = [];
+        arrayOfStudentObjects.forEach(studentObject => {
+            topNotes.push(Math.max(...studentObject.notes));
+        });
+        return topNotes;
+    }
+    //
+    // function getStudentTopNotes(arrayOfStudentObjects){
+    //     let topNotes = [];
+    //     for (let i=0; i < arrayOfStudentObjects.length; i++){
+    //         let topNote = arrayOfStudentObjects[i].notes[0];
+    //         for(let j=0; j < arrayOfStudentObjects[i].notes.length;j++){
+    //             if(arrayOfStudentObjects[i].notes[j] > topNote){
+    //                 topNote = arrayOfStudentObjects[i].notes[j];
+    //             }
+    //         }
+    //         topNotes.push(topNote);
+    //     }
+    //     return topNotes;
+    // }
+
+
+
+    // /**
+    //  * TODO:
+    //  * Remove the Letters ABC
+    //  * Create a function named removeABC that will remove the letters "a", "b" and "c" from the given string and return the modified version. If the given string does not contain "a", "b", or "c", return null.
+    //  *
+    //  * Examples
+    //  * >> removeABC("This might be a bit hard") ➞ "This might e  it hrd"
+    //  * >> removeABC("hello world!") ➞ null
+    //  * >> removeABC("") ➞ null
+    //  *
+    //  * Notes
+    //  * If the given string does not contain "a", "b", or "c", return null.
+    //  */
+
+
+//     Write a function called removeBs that takes in an array of strings and returns an array of strings with all b's removed from each string. Assume the array contains only string elements.
+//
+// Examples...
+//
+// removeBs(['abc', 'ab', 'cat', 'Bay']) // returns ['ac', 'a', 'cat', 'ay']
+
+
+
+
+//
+// Write a function that accepts the top three bowling scores and returns the average.
+//
+//     Write a function that accepts the top three bowling scores and returns the average.
+// 1. write a function
+// 2. pass in parameters
+// 3. 3 scores ( variables)
+// 4. return something (number)
+//
+// let first = 120;
+// let second = 234;
+// let third = 90;
+//
+// Modify the function to accept an array of bowling scores and return the average
+//
+// Write a function that accepts an array of bowling scores and returns the highest
+//
+// Write a function that accepts an array of bowling scores and returns true if the highest score is divisible by 3
+
+// Write a function that accepts a string, breaks down the string into components, and returns an object where each component of the string has become the value of a property
+
+let cityAndState = "San Antonio, Texas";
+
+function cityStateObject(cityAndState){
+    return {
+        city: cityAndState.split(", ")[0],
+        state: cityAndState.split(", ")[1]
+    }
+}
+
+// Write a function that analyzes a string, returning an object that contains several properties with information about the string, example, length, firstLetter, and lastLetter properties//similar to returning the length of a string
+
+function analyzeString(string){
+    return {
+        length: string.length,
+        firstLetter: string.charAt(),
+        lastLetter: string.charAt(string.length - 1)
+    };
+}
+
+// -- Write a function that takes in an array and returns the array modified in some way -- certain elements removed, certain elements modified in a regular way (example, every numerical value doubled, every string uppercased)
+//removes every odd number from an array of numbers
+
+myOtherArray = [0,1,2,3,4,5,6,7,8,9,10];
+
+function removesOdds(array){
+    const newArray = [];
+    for(let i=0; i < array.length;i++){
+        if(array[i] % 2 === 0){
+            newArray.push(array[i]);
+        }
+    }
+    return newArray;
+}
+
+//write a function that takes an array of numeric values and returns an array with all those values doubled
+
+function doubleNumbers(array){
+    const newArray = [];
+    for(let i=0; i < array.length;i++){
+        if(array[i] % 2 === 0){
+            newArray.push(array[i] * 2);
+        }
+    }
+    return newArray;
+}
 
 
 

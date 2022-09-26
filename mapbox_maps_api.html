@@ -19,6 +19,7 @@
 </head>
 <body>
 <div id="map" class="mx-auto mt-4"></div>
+    <button id="hide">Hide Marker</button>
 <script>
     mapboxgl.accessToken = MAPBOX_API_TOKEN;
     const map = new mapboxgl.Map({
@@ -84,6 +85,9 @@
 
         favRest.setPopup(popup);
 
+        });
+        $(".hide").on('click', function(){
+            $(".mapboxgl-marker").css('display', 'none');
         });
 
     // let marker = new mapboxgl.Marker()
