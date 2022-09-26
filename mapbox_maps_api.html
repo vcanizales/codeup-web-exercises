@@ -58,44 +58,38 @@
     //declaring favorite restaurants
     const favRests = [{
         name: "El Otro Tiesto",
-        properties: {
-            coordinates: [-80.1891, 25.8059],
-            description: "Dominican/sushi fusion kitchen with bar and hookah services"
-        },
+        coordinates: "-80.1891, 25.8059",
+        description: "Dominican/sushi fusion kitchen with bar and hookah services"
+        }, {
         name: "Little Ems Oyster Bar",
-        properties: {
-            coordinates: [-98.4911, 29.41391],
-            description: "Neighborhood oyster bar with mellow vibes"
-        },
+        coordinates: "-98.4911, 29.41391",
+        description: "Neighborhood oyster bar with mellow vibes"
+        }, {
         name: "El Pollo Bronco",
-        properties: {
-            coordinates: [-101.1246875, 27.8536286],
-            description: "Pollos asados"
-        }
+        coordinates: "-101.1246875, 27.8536286",
+        description: "Pollos asados"
     }];
 
     //looping through the array of objects
-    // for(let i=0; i < favRests.length;i++) {
-    //     //declare variable for getting object properties
-    //     let props = favRests[i].properties;
-    // }
-    //     let popup = `${favRests[i].name} ${favRest.description}`
-    //     let marker = L.marker(favRests[i].properties.coordinates, {
-    //     })
-    //         .addTo(map)
-    //         .bindPopup(popup);
-    //
-    // marker.on("click", function() {
-    //     this.openPopup();
-    // }
-    // }
-    $.ajax(favRests).done(function(properties){
-        properties.forEach(function(name){
-            $()
-        })
-    })
 
+    favRests.forEach((data) => {
+        //split coordinates object
+        let coordinatesDiv = data.coordinates.split(',');
+        let newCoordinates = {
+            lng: coordinatesDiv[0],
+            lat: coordinatesDiv[1]
+        };
+        const favRest = new mapboxgl.Marker().setLngLat(newCoordinates).addTo(map);
+        const popup = new mapboxgl.Popup().setHTML(`<h2>${data.name}</h2><p>${data.description}</p>`);
 
+        favRest.setPopup(popup);
+
+        });
+
+    // let marker = new mapboxgl.Marker()
+    // marker.setLngLat([coordinates[0], coordinates[1]])
+    //     .setPopup(popup)
+    //     .addTo(map);
 
 </script>
 
