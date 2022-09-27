@@ -1,0 +1,12 @@
+html {
+	background-color: #cccccc;
+}
+
+navbar {
+	background-color: blue;
+}
+
+#map {
+	width: 400px;
+	height: 300px;
+}
