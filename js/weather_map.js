@@ -1,21 +1,23 @@
 $(function() {
-    //
-    // $.get("https://api.openweathermap.org/data/2.5/onecall", {
-    //     lat: 29.423017,
-    //     lon: -98.48527,
-    //     APPID: OPEN_WEATHER_APPID
-    // }).done(function(data) {
-    //     console.log(data);
-    // });
-
-
-    $.get("https://api.openweathermap.org/data/2.5/weather", {
-        APPID: OPEN_WEATHER_APPID,
-        q:     "San Antonio, US"
-    }).done(function(data) {
-        console.log(data);
+    //map
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style:'mapbox://styles/mapbox/streets-v11', // style URL
+        // 'mapbox://styles/mapbox/satellite-v9',
+        center: [-80.1891, 25.8059], // starting position [lng, lat]
+        zoom: 2, // starting zoom
+        projection: 'globe' // display the map as a 3D globe
     });
 
+
+    //Declaring days of the week
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    function namedDayFromDay(timeStamp){
+        let dateTime = new Date(timeStamp * 1000);
+        return daysOfWeek[dateTime.getDay()];
+    }
+    //Declaring wind directions
     function windCardinalDirection(degrees) {
         let cardinalDirection = '';
         if ((degrees > 348.75 && degrees <= 360) || (degrees >= 0 && degrees <= 11.25)) {
@@ -54,70 +56,113 @@ $(function() {
         return cardinalDirection;
     }
 
-
-    function appendLeadingZeroes(n) {
-        if (n <= 9) {
-            return "0" + n;
-        }
-        return n;
-    }
-
-    const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-
-    function formatTime(timeStamp) {
-        let dateTime = new Date(timeStamp * 1000);
-        let year = dateTime.getFullYear();
-        let month = months[dateTime.getMonth()];
-        let day = dateTime.getDate();
-        let hour = appendLeadingZeroes(dateTime.getHours());
-        let minutes = appendLeadingZeroes(dateTime.getMinutes());
-        let seconds = appendLeadingZeroes(dateTime.getSeconds());
-        let formattedDateTime = month + " " + day + " " + year + " " + hour + ":" + minutes + ":" + seconds;
-        return formattedDateTime;
-    }
-
-    $.get("http://api.openweathermap.org/data/2.5/weather", {
-        APPID: OPEN_WEATHER_APPID,
-        lat: 29.423017,
-        lon: -98.48527,
-        units: "imperial"
-    }).done(function (data) {
-        console.log("current weather");
-        console.log(data);
-        console.log(data.main.temp);
-        console.log(data.wind.speed);
-        console.log(windCardinalDirection(data.wind.deg));
-        $('body').append(`<p>The current temperature is ${data.main.temp}`);
-    });
-
     $.get("https://api.openweathermap.org/data/2.5/forecast/", {
         APPID: OPEN_WEATHER_APPID,
         lat: 29.423017,
         lon: -98.48527,
         units: "imperial"
     }).done(function (data) {
-        // console.log("forecasts:");
-        // console.log(data.city);
-        // console.log(data.list[4].dt);
-        console.log(data.list)
-        data.list.forEach((forecast, index) => {
-            if (index < 5){
-                $('body').append(`div class = "card" style="width: 18rem;">
-                <div class="card-body">
-                <h5 class="card-title">${data.list[index].dt_txt}</h5>
-                <p class="card-text"><h6>Current Weather for ${data.city.name}</h6>
-                <br>
-                Temperature: ${data.list[index].main.temp}<br>`)
-            }
-        })
+        //Function to loop through days of the week with weather data
+        data.list.forEach((forecast, i) =>{
+            console.log(i);
+            // console.log(data.list[i]);
+            $(".weather-predictions")
+                // data.list.forEach((forecast, i) => {
+                //     console.log(data);
+                    if(i % 8 == 0) {
+                        console.log("inside if i%8===0: " + i);
+                        $(`#weather-predictions`).append(`
+                        <div class="card col-2">
+                        <p>Current Date ${data.list[i].dt_txt.split(' ')[0]}</p>
+                        <p>The current temperature is ${data.list[i].main.temp}</p>
+                        <p>Description: ${data.list[i].weather[0].description}</p>
+                        <p>Humidity: ${data.list[i].main.humidity}</p>
+                        <p>Wind Speed: ${data.list[i].wind.speed}</p>
+                        <p>Pressure: ${data.list[i].main.pressure}</p>
+                        </div>`);
+                    }
+                // });
+        });
     });
 
-    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-    function namedDayFromDay(timeStamp){
-        let dateTime = new Date(timeStamp * 1000);
-        return daysOfWeek[dateTime.getDay()];
+    function updateWeather(coordinates) {
+        console.log("inside updateWeather");
+        console.log(coordinates[0]);
+        console.log(coordinates[1]);
+        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+            APPID: OPEN_WEATHER_APPID,
+            lat: coordinates[1],
+            lon: coordinates[0],
+            units: "imperial" // this is fahrenheit
+        }).done(function (data) {
+            console.log("completed updateWeather get request");
+            showWeather(data);
+        });
     }
+    $.get("https://api.openweathermap.org/data/2.5/weather", {
+        APPID: OPEN_WEATHER_APPID,
+        lat: 29.423017,
+        lon: -98.48527,
+        units: "imperial"
+    }).done(function(data) {
+        console.log(data);
+    });
+
+
 
 
 });
+
+
+
+
+
+    //
+    // function appendLeadingZeroes(n) {
+    //     if (n <= 9) {
+    //         return "0" + n;
+    //     }
+    //     return n;
+    // }
+    //
+    // const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    //
+    // function formatTime(timeStamp) {
+    //     let dateTime = new Date(timeStamp * 1000);
+    //     let year = dateTime.getFullYear();
+    //     let month = months[dateTime.getMonth()];
+    //     let day = dateTime.getDate();
+    //     let hour = appendLeadingZeroes(dateTime.getHours());
+    //     let minutes = appendLeadingZeroes(dateTime.getMinutes());
+    //     let seconds = appendLeadingZeroes(dateTime.getSeconds());
+    //     let formattedDateTime = month + " " + day + " " + year + " " + hour + ":" + minutes + ":" + seconds;
+    //     return formattedDateTime;
+    // }
+
+    // $.get("http://api.openweathermap.org/data/2.5/weather", {
+    //     APPID: OPEN_WEATHER_APPID,
+    //     lat: 29.423017,
+    //     lon: -98.48527,
+    //     units: "imperial"
+    // }).done(function (data) {
+    //     console.log("current weather");
+    //     console.log(data);
+    //     console.log(data.main.temp);
+    //     console.log(data.wind.speed);
+    //     console.log(windCardinalDirection(data.wind.deg));
+    //     $('body').append(`<p>The current temperature is ${data.main.temp}`);
+    // });
+
+
+
+
+
+
+
+
+
+
+
+
+
