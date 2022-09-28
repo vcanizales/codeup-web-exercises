@@ -1,8 +1,23 @@
 /*html {*/
-/*	background-color: #cccccc;*/
+/*	background-color: #212529;*/
 /*}*/
 
-/*navbar {*/
-/*	background-color: blue;*/
-/*}*/
+* {
+	font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+	height: auto;
+	background-color: #212529 !important;
+}
+
+map{
+	padding-bottom: 25px;
+}
+
+.navbar-brand {
+	font-size: larger;
+}
+
+
 
