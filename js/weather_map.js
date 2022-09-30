@@ -145,8 +145,8 @@ $(function() {
 
 });
 
-    //Making markers for users to add it to the map
-    const marker = new mapboxgl.Marker().setLngLat(-98.48527,29.423017).addTo(map);
+    // //Making markers for users to add it to the map
+    // const marker = new mapboxgl.Marker().setLngLat(-98.48527,29.423017).addTo(map);
 
 
 

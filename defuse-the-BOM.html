@@ -14,8 +14,7 @@
     "use strict";
 
     let detonationTimer = 5;
-    let interval = 1000;
-    let stopBomb = setInterval(updateTimer, 1000);
+    let defuseBOM = setInterval(updateTimer, 1000);
 
     // TODO: This function needs to be called once every second
         function updateTimer() {
@@ -29,12 +28,11 @@
         detonationTimer--;
     }
 
-    //let offTimer = (defuseTheBOM, 1000);
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
-        clearTimeout(stopBomb);
+        clearInterval(defuseBOM);
     }
 
     // Don't modify anything below this line!
