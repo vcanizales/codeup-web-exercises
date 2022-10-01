@@ -36,5 +36,35 @@ const users = [
     }
 ];
 
-const moreThan3 = users.filter(langs => langs.languages > 3);
-console.log(moreThan3.languages);
+let moreThan3 = users.filter(function(user){
+    return user.languages.length >= 3;
+});
+console.log(moreThan3);
+
+const emails = users.map(function (item){
+    return item.email
+});
+console.log(emails)
+
+let totalYears = users.reduce(function(tenure, user){
+    return user.yearsOfExperience + tenure;
+},0);
+let averageYears = totalYears/users.length
+console.log(averageYears)
+
+let longestEmail = users.reduce(function(longest, user){
+    if(longest.length < user.email.length){
+        return user.email;
+    } else {
+        return user;
+    }
+})
+console.log(longestEmail)
+
+let nameString = users.reduce(function(names, users){
+    return `${names} ${users.name}`
+}, '');
+console.log(nameString)
+
+
+
