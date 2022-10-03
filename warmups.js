@@ -544,16 +544,41 @@ function removesOdds(array){
 
 //write a function that takes an array of numeric values and returns an array with all those values doubled
 
-function doubleNumbers(array){
-    const newArray = [];
-    for(let i=0; i < array.length;i++){
-        if(array[i] % 2 === 0){
-            newArray.push(array[i] * 2);
-        }
-    }
-    return newArray;
-}
+// function doubleNumbers(array){
+//     const newArray = [];
+//     for(let i=0; i < array.length;i++){
+//         if(array[i] % 2 === 0){
+//             newArray.push(array[i] * 2);
+//         }
+//     }
+//     return newArray;
+// }
 
+//*************************************************************//
+// document.querySelector("button").addEventListener('click',(e) =>{
+//     if(e.target.textContent === 'Warmups'){
+//         e.target.textContent = "I own the DOM";
+//     } else {
+//         e.target.textContent = 'Warmups';
+//     }
+// });
 
+// document.querySelector("button").addEventListener("click", (e) => {
+//
+//     (e.target.textContent === 'Warmups') ? e.target.textContent = "I was clicked" : e.target.textContent = "Warmups"
+//
+// });
+
+// $("button").on('click', function(){
+//     console.log("hi").text("I own the DOM");
+// });
+
+document.getElementsByTagName("button")[0].addEventListener('click', function(e){
+    document.getElementsByTagName("h1")[0].innerHTML = "I own the DOM";
+});
+
+$("#source").on('keyup', function(){
+    $("#output).text($("#source").val());
+});
 
 
