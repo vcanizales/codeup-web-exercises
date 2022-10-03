@@ -72,9 +72,8 @@
 
   // FILTER
   // TODO 4: using filter, create a new array containing only dogs younger than 10 years old
-  const youngings = dogs.filter(function(young){
-    return young.age < 10;
-  })
+  const youngings = dogs.filter((young) => young.age < 10
+  );
   console.log(youngings);
 
   // TODO 5: using filter, create a new array containing only dogs named 'Lexie'
@@ -103,15 +102,41 @@
   console.log(sumOfAges);
 
   // TODO 9: using reduce, return an array of dog objects with all isTrained properties set to true
-  const veryGoodBoys = dogs.reduce(function(acc, item){
-    let key = item[false];
-    if (!acc[key]){
-      acc[key]=[true]
-    }
-    acc[key].push(item);
-    return acc;
-  });
-  console.log(veryGoodBoys);
+  // const veryGoodBoys = dogs.reduce(function(acc, item){
+  //   let key = item[true];
+  //   if (!acc[key]){
+  //     acc[key]=[false]
+  //   }
+  //   acc[key].push(item);
+  //   return acc;
+  // });
+  // console.log(veryGoodBoys);
+
+  // let veryGoodBoys = dogs.reduce((accumulator, dog, index, copyArray) => {
+  //   let newDog = {
+  //     dogName: dog.dogName,
+  //     age: dog.age,
+  //     isTrained: true
+  //   }
+  //   accumulator.push(newDog);
+  //   return accumulator;
+  // },[]);
+  // console.log(veryGoodBoys);
+
+  // let newDogs = [...dogs];
+  // let allDogsTrained = newDogs.reduce((accumulator, dog) => {
+  //   dog.isTrained = true;
+  //   accumulator.push(dog);
+  //   return accumulator;
+  // },[]);
+  // console.log(allDogsTrained);
+
+  let newDog = JSON.parse(JSON.stringify(dog));
+  newDog.isTrained = true;
+  accumulator.push(newDog);
+  return accumulator;
+  },[]);
+
 
   // EXTRA CHALLENGES
   // TODO 10: what is the average age of each dog?
@@ -121,7 +146,16 @@
   // TODO 12: what is the average length of names of untrained dogs?
   console.log('Exercise 12:');
   // TODO 13: what are the combined ages of all dogs in dog years? (7x more than a human year)
-  console.log('Exercise 13:');
+  let combinedDogYears = dogs.reduce((accumulator, dog, index) => {
+    if (index == (dogs.length -1)){
+      accumulator + parseInt(dog.age)
+      return accumulator * 7;
+    } else {
+      return accumulator + dog.age;
+    }
+  }, 0);
+  console.log(combinedDogYears);
+
   // TODO 14: create a string of the first letters of each dog name for dogs three years old (should be "LF")
   console.log('Exercise 14:');
 </script>
