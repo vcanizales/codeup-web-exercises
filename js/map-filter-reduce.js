@@ -58,13 +58,24 @@ let longestEmail = users.reduce(function(longest, user){
     } else {
         return user;
     }
-})
-console.log(longestEmail)
+});
+// return longest.length > user.email.length ? longest : user.email;
+console.log(longestEmail);
 
 let nameString = users.reduce(function(names, users){
     return `${names} ${users.name}`
 }, 'Your instructors are:');
-console.log(nameString)
+console.log(nameString);
+
+let uniqueLangs = users.reduce((acc, user)=>{
+   user.languages.forEach(function(language){
+       if(!acc.includes(language)){
+           acc.push(language);
+       }
+   })
+    return acc;
+},[]);
+console.log(uniqueLangs);
 
 
 
