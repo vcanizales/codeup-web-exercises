@@ -45,7 +45,25 @@ const cars = [
     }
 ];
 
-const mileages = cars.map(car => car.mileage);
+const mileages = cars.reduce((accumulator, car) => {
+    accumulator.push(car.mileage);
+    return accumulator;
+},[]);
+console.log(mileages);
+
+
+const highestMileage = cars.reduce((accumulator, car, index, array)=>{
+   accumulator.push(car.mileage);
+   if (index === array.length - 1){
+       return Math.max(...accumulator);
+   }
+   return accumulator;
+}, []);
+console.log(highestMileage)
+
+
+
+// const mileages = cars.map(car => car.mileage);
 // console.log(mileages);
 
 const newObject = cars.map(car => {
@@ -65,13 +83,13 @@ under10k.forEach(({make, model, mileage})=> {
 });
 
 
-
-prices.filter(price => price < 10)
-    .map(price => {
-        const tax = (price * 0.0825).toFixed(2);
-        const total = (price + parseFloat(tax)).toFixed(2);
-        return parseFloat(total);
-    });
+//
+// prices.filter(price => price < 10)
+//     .map(price => {
+//         const tax = (price * 0.0825).toFixed(2);
+//         const total = (price + parseFloat(tax)).toFixed(2);
+//         return parseFloat(total);
+//     });
         // }).forEach(price => $("div").append(`<p>${price}/</p>`));
 
 const totalCost = prices.reduce(function(total, price){
@@ -88,3 +106,23 @@ $("#output").append(`<p>The total is ${totalCost}</p>`);
 //
 // $("div").html("<p>Hello world</p>");
 // $("#output").append("<p>Hello world 2</p>");
+
+// const avgPrice = prices.reduce((function(acc, current, index, array){
+//     console.log(acc.toFixed(2));
+//     return total + current;
+// }));
+//
+// const avgPrice = prices.reduce((function(acc, current, index, array){
+//     acc += current;
+//     if(index === array.length - 1) {
+//         return acc/array.length;
+//     }
+//     return acc;
+// }));
+
+console.log("You have $158.76 in your shopping cart.");
+
+const totalG = prices.reduce(function(total, itemPrice){
+    return total + itemPrice;
+}, 158.76);
+console.log(`Your total cost is $${totalG.toFixed(2)}`);
