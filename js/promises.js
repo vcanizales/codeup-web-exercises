@@ -1,67 +1,79 @@
-$.get("/data/murals.json", function (data){
-    console.log(data)
-});
+// function lastCommit(username){
+//     fetch('https://api.github.com/users/vcanizales/events', {headers: {
+//             'Authorization': 'token' + GITHUB_API_TOKEN
+//         }
+//     }).then(response => response.json())
+//         .then (events => {
+//             console.log(events)
+//             console.log(events[0].payload.commits[0].message)
+//             console.log(events[0].created_at)
+//         })
+//         .catch(error => console.log(error));
+// }
+// console.log(lastCommit());
 
-//Fetch API the vanilla way
-// fetch("/data/murals.json").then(function(response){
-//     return response.json();
+
+
+
+
+// const lastCommit = fetch("https://api.github.com/users/vcanizales/events");
+//
+// Promise.all([lastCommit]).then(function(commits){
+//     return Promise.all(commits.map(function(response){
+//         return response.json();
+//     }));
 // }).then(function(data){
 //     console.log(data);
+// }).then(events => {
+//     console.log(events)
+//     console.log((events[0].created_at))
+//         .catch(error => console.error(error))
 // });
+// }).then(function(lastOne){
+//     return commit[0].date;
 
-fetch("data/murals.json").then(resp => resp.json()).then(data => console.log(data));
 
-//Callback: a function passed as an argument to another function; it can run after another function has finished running
-
-// function sayHello(greeting, name){
-//     return `${greeting},${name}`;
+// Create a function that accepts a GitHub username, and returns a promise that resolves returning just the date of the last commit that user made.
+// function getUsersLastCommit(username) {
+//     fetch(`https://api.github.com/users/${username}/events/public`, {
+//         headers: {
+//             'Authorization': `token ${GITHUB_API_TOKEN}`
+//         }
+//     }).then(response => response.json())
+//         .then(events => {
+//             console.log(events)
+//             console.log(events[0].payload.commits[0].message)
+//             console.log(events[0].created_at)})
+//         .catch(error => console.error(error));
 // }
-//
-// sayHello("Hello", "Valeria");
-//
-// function displayOutput(output){
-//     $("#output").html(output);
-// }
 
-// function greeter(greeting, name, displayFunction){
-//     greeting = `${greeting}, ${name}!`;
-//     displayFunction(greeting);
+// function lastCommit(username){
+//     return fetch(`https://api.github.com/users/${username}/events/public`, {
+//     headers: {
+//         'Authorization': 'token' + GITHUB_API_TOKEN
+//     }
+// }).then(response => response.json())
+//     .then(events => {
+//         const dateOfLastPush = new Date(events[0].created_at).toDateString();
+//         console.log(dateOfLastPush);
+//         return dateOfLastPush;
+//     });
 // }
-//
-function displayToOutputDiv(output){
-    $("#output").html(output);
+// console.log(lastCommit('vcanizales'));
+
+function getUserLastCommit(username){
+    return fetch(`https://api.github.com/users/${username}/events/public`)
+        .then(response => response.json())
+        .then(events =>{
+            return events;
+        })
+        .catch(error => console.error(error))
 }
-//
-// greeter("Hola", "Valeria", displayToOutputDiv);
-//
-// // setTimeout( () => greeter("Aloha", "Jason", displayToOutputDiv, 3000));
-// setTimeout(function(){
-//     greeter("Aloha", "Valeria", displayToOutputDiv), 3000
-// });
 
-const greetings = [ "Salutations", "Shoutout", "Hello", "Hullo", "Hail", "Hey", "Hi", "Aloha", "Hola", "Bonjour", "Howdy", "Namaste", "Ohayo", "Ni hao"];
-const names = ['David', 'Jay', 'Bianca', 'Laura', 'Kenneth', 'Cody', 'Justin', 'Javier', 'Dane', 'Casey', 'Mark', 'Ry', 'Jordy'];
-function generateGreeting(greetingsArray, namesArray, displayFunction){
-    let greeting = greetingsArray[Math.floor(Math.random() * greetingsArray.length)];
-    const name = namesArray[Math.floor(Math.random() * namesArray.length)];
-    greeting = `${greeting}, ${name}!`;
-    displayFunction(greeting);
+
+async function getUserLastCommit(username){
+    let response = await fetch(`https://api.github.com/users/${username}`)
+    let events = await response.json();
+    console.log(events)
 }
 
-// generateGreeting(greetings, names, displayToOutput);
-setInterval(generateGreeting, 1000, greetings, names, displayToOutputDiv);
-
-//Callback function
-const aPromise = new Promise((resolve, reject)=> {
-    setTimeout(()=>{
-        if(Math.random() > 0.5){
-            resolve("I was fulfilled!");
-        } else {
-            reject("I was rejected!");
-        }
-    }, 3000);
-});
-
-aPromise.then(value => console.log(value)).catch(error=>console.log(error));
-//A fetch call returns a promise
-fetch("data/murals.json").then(response => response.json()).then(data => console.log(data));
