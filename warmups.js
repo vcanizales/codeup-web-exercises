@@ -578,7 +578,36 @@ document.getElementsByTagName("button")[0].addEventListener('click', function(e)
 });
 
 $("#source").on('keyup', function(){
-    $("#output).text($("#source").val());
+    $("#output").text($("#source").val());
 });
 
+//When the mouse enters the h2 with the text "Lorem Generator", a paragraph containing lorem appears in the div with the id of loremParagraphs
+// function changeText(){
+// var display = document.getElementById("LoremParagraphs");
+// display.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus blanditiis deserunt dolore dolores doloribus earum eius, explicabo inventore maxime molestiae obcaecati odit optio, pariatur quaerat quam reiciendis velit voluptas. Excepturi.";
+// }
+const lorem = "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus blanditiis deserunt dolore dolores doloribus earum eius, explicabo inventore maxime molestiae obcaecati odit optio, pariatur quaerat quam reiciendis velit voluptas. Excepturi.</p>";
+// $("#LoremParagraphs h2").mouseenter(function(){
+//     $("#loremParagraphs").append(lorem);
+// });
+
+$("#LoremParagraphs h2").on('mouseenter', function (){
+    $("#LoremParagraphs").append(lorem);
+});
+
+// When the user clicks on the "Hot Pink It" button, all the text in the div with the id of loremParagraphs becomes hotpink if it's black, or black if it's hotpink.
+// document.getElementById("hotPinkIt").addEventListener('click', function(changeStyle){
+//     element = document.getElementById("LoremParagraphs");
+//     element.style.color = "hot pink";
+// })
+$("#hotPinkIt").on('click', function(){
+    $("#LoremParagraphs").toggleClass('hotpink');
+});
+
+//bonus
+$("#blinkPink").on('click', function(){
+    setInterval(function(){
+        $("#LoremParagraphs").toggleClass('hotpink');
+    }, 3000);
+});
 
