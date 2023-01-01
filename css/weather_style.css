@@ -19,5 +19,9 @@ map{
 	font-size: larger;
 }
 
+.weather-predictions {
+	justify-content: space-evenly;
+}
+
 
 
